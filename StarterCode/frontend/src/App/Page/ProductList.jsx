@@ -7,16 +7,29 @@ import CardMedia from "@mui/material/CardMedia";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
+import CircularProgress from "@mui/material/CircularProgress";
+import Alert from "@mui/material/Alert";
 
 const ProductList = ({ products, onDeleteProduct, isLoading, error }) => {
 
-  //implement the get products function
-  // const fetchProducts = () => {
-  // };
+  if (isLoading) {
+    return (
+      <Container style={{ textAlign: "center", marginTop: "50px" }}>
+        <CircularProgress />
+        <Typography variant="h6" style={{ marginTop: "20px" }}>
+          Loading products...
+        </Typography>
+      </Container>
+    );
+  }
 
-  // //implement the delete function
-  // const handleDelete = (id) => {
-  // };
+  if (error) {
+    return (
+      <Container style={{ textAlign: "center", marginTop: "50px" }}>
+        <Alert severity="error">{error}</Alert>
+      </Container>
+    );
+  }
 
   return (
     <Container>
@@ -26,7 +39,7 @@ const ProductList = ({ products, onDeleteProduct, isLoading, error }) => {
       >
         Simple Card List
       </Typography>
-      <Grid container spacing={2} style={{ marginTop: "20px" }}>
+      <Grid container spacing={2} justifyContent="center" style={{ marginTop: "20px" }}>
         {products.map((product) => (
           <Grid item xs={12} sm={6} md={4} key={product.id}>
             <Card sx={{ position: "relative" }}>
@@ -41,14 +54,12 @@ const ProductList = ({ products, onDeleteProduct, isLoading, error }) => {
               >
                 <DeleteIcon />
               </IconButton>
-
               <CardMedia
                 component="img"
                 height="150"
                 image={product.imageUrl}
                 alt={product.description}
               />
-
               <CardContent>
                 <Typography variant="h5" style={{ fontWeight: "bold" }}>
                   {product.name}

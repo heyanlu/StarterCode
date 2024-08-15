@@ -1,6 +1,5 @@
 const API_BASE_URL = "http://localhost:3001"; // To update on production
 
-
 export function fetchProducts() {
     return fetch(`${API_BASE_URL}/api/products`, {
         method: "GET",
