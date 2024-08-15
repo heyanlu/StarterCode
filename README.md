@@ -1,11 +1,34 @@
-# SWE INTERVIEW TEST 
-THIS IS TO TEST YOUR SKILLS TO MEET OUR APP DEVELOPMENT REQUIREMENTS
+## Installation
 
-1. Clone this repo to your local machine.
-2. Read `Assignment Requirements` carefully and follow it.
-4. Please commit your entire code to `your own Github repository` 
-5. On your repo, please add step-by-step instructions on how to launch (for both the Backend and Frontend) to the `README.md`
-6. Share your repo link with us via email.
+### Clone the repository 
+```bash
+git clone https://github.com/heyanlu/StarterCode.git
+```
 
-HAPPY CODING! </br>
-A Round Entertainment
+### Run the frontend
+Navigate into the cloned frontend directory:
+```bash
+cd frontend
+```
+Install dependencies and run the frontend application:
+```bash
+npm install
+```
+Start the development server:
+```bash
+npm start
+```
+
+### Run the backend
+Navigate into the cloned backend directory:
+```bash
+cd backend
+```
+Install dependencies and run the backend application:
+```bash
+npm install
+```
+Start the development server:
+```bash
+npm run DevServer
+```
